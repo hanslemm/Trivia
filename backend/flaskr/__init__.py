@@ -31,9 +31,10 @@ def create_app(test_config=None):
   Create an endpoint to handle GET requests 
   for all available categories.
   '''
+
   @app.route('/categories')
   def get_all_categories():
-    all=Trivia.query.all()
+    all=Question.query.all()
 
   '''
   @TODO: 
