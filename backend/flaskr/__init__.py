@@ -32,9 +32,13 @@ def create_app(test_config=None):
   for all available categories.
   '''
 
-  @app.route('/categories')
-  def get_all_categories():
-    all=Question.query.all()
+  @app.route('/questions/<str:category>')
+  def get_all_question_in_category(category):
+    categoryQuestions=Question.query.filter_by(category=category).all()
+    data = {
+      ''
+    }
+    return category_questions
 
   '''
   @TODO: 
